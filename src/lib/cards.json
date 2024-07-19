@@ -5,19 +5,19 @@
       "id": 1,
       "title": "Card 1",
       "description": "This is the description for Card 1",
-      "imageUrl": "$lib/images/github.svg"
+      "imageUrl": "/images/github.svg"
     },
     {
       "id": 2,
       "title": "Card 2",
       "description": "This is the description for Card 2",
-      "imageUrl": "$lib/images/svelte-logo.svg"
+      "imageUrl": "/images/svelte-logo.svg"
     },
     {
       "id": 3,
       "title": "Card 3",
       "description": "This is the description for Card 3",
-      "imageUrl": "$lib/images/svelte-welcome.png"
+      "imageUrl": "/images/svelte-welcome.png"
     }
   ]
 }
