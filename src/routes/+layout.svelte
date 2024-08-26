@@ -12,9 +12,7 @@
 
 	<footer class="footer-background">
 		<div class="footer-background">
-			<button class="contact-button">
-				Contact Me
-			</button>
+
 		</div>
 
 	</footer>
@@ -46,10 +44,6 @@
 		padding: 12px;
 	}
 
-	.contact-button {
-		background-color: #d9480f;
-		border-radius: 12px;
-	}
 	.footer-background {
 		width: 100%;
 		height: 15%;

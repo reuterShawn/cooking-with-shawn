@@ -1,126 +1,56 @@
 <script>
 	import { page } from '$app/stores';
+	let siteName = "Fulfillment Cooking"
 </script>
 
 <header>
-	<!-- <div class="corner">
-		<!-- <a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a> -->
-
 	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/') ? 'page' : undefined}>
-			
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
+    <h1>{siteName}</h1>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
 	</nav>
 
-	<!-- <div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
-	</div> -->
 </header>
 
 <style>
 	header {
 		display: flex;
+    background-color: orange;
 		justify-content: space-between;
 	}
 
-	/* .corner {
-		width: 3em;
-		height: 3em;
-	} */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-	/* .corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
 
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	} */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
 
-	nav {
-		display: flex;
-		justify-content: center;
-		--background: #434c5e;
-	}
 
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
+  li {
+    margin-left: 1rem;
+  }
 
-	path {
-		fill: var(--background);
-	}
+  a {
+    text-decoration: none;
+    color: #333;
+  }
 
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	a:hover {
-		color: var(--color-theme-1);
-	}
+  a:hover {
+    text-decoration: underline;
+  }
 </style>
