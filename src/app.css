@@ -14,4 +14,22 @@
 	--column-margin-top: 4rem;
 	font-family: var(--font-body);
 	color: var(--color-text);
+
+
+	/*
+	Themes 
+	Current Color Palette
+	*/
+	--darkMain: #63275B;
+	--accentOne: #426a5a;
+	--acccentTwo: #3f8efc;
+
+	--backOne: #ffd0f1;
+	--backTwo: #fefcf4
+
+
+	button {
+		background-color: var(--accentOne);
+	}
 }
+
