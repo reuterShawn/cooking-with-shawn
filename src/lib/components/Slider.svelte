@@ -1,65 +1,28 @@
+
+
 <script>
-let sliderValue = $state(6);
-
-// function handleChange(event) {
-//     sliderValue.(event.target.value);
-//   }
-
+  let sliderValue = 6;
 </script>
-<!-- 
-<div class="slider-container">
-  <input 
-    type="range" 
-    min="1" 
-    max="12" 
-    value={sliderValue}
-    oninput={handleChange}
-    class="slider"
-  > -->
-  <!-- <div class="value-display">Selected value: {sliderValue}</div>
-</div> -->
 
-<style>
-  .slider-container {
-    width: 300px;
-    margin: 20px auto;
-  }
+  <div style="width: 100%; height: 100%;">
+    <label>
+      <p>
+        Family Size {sliderValue}
+      </p>
+      <input type="range" bind:value={sliderValue} min="1" max="12" />
+    </label>
+  </div>
 
-  .slider {
-    width: 100%;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 15px;
-    background: #ddd;
-    outline: none;
-    opacity: 0.7;
-    transition: opacity .2s;
-  }
-
-  .slider:hover {
-    opacity: 1;
-  }
-
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #4CAF50;
-    cursor: pointer;
-    border-radius: 50%;
-  }
-
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #4CAF50;
-    cursor: pointer;
-    border-radius: 50%;
-  }
-
-  .value-display {
-    text-align: center;
-    margin-top: 10px;
-  }
-</style>
+  <style>
+    div {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+      /* background:hsla(15, 100%, 50%, 0.1); */
+      border: 1px solid var(--accentTwo);
+      border-radius: 1em;
+      box-shadow: inset;
+    }
+  
+  </style>

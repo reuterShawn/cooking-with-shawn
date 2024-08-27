@@ -18,15 +18,15 @@
 <style>
   .card-container {
     display: flex;
-  
     flex-wrap: wrap;
     gap: 1rem;
   }
 
   .card {
+    background-color: var(--backOne);
     width: 14em;
     height: 20em;
-    border: .5em solid orange;
+    border: .2em solid var(--accentTwo);
     border-radius: 1em;
     padding-left: .5em;
     box-shadow:inset 2px;
@@ -34,13 +34,14 @@
   }
 
   button {
-    background-color: orange;
-    width: 6em;
+    background-color: var(--accentTwo);
     float: right;
+    width: 6em;
     border-radius: 1em;
     box-shadow: inset;
     padding: .5em;
     color: white;
+    transform: translate(0%, 100%);
   }
 
   img {

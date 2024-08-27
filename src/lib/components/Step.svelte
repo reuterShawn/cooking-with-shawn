@@ -1,6 +1,6 @@
 <script>
-    import meals from '../cards.json';
-    let currentStep = $state(0);
+	import Slider from './Slider.svelte';
+    let currentStep = $state(1);
     let familySize = $state(0);
     let selectedProducts = $state([1,2,3,4]);
 
@@ -44,14 +44,14 @@
 
 
 <form onsubmit={submitForm}>
-    {#if currentStep == 0}
+    {#if currentStep == 1}
       <h2>Step 1: Family Size</h2>
       <label>
-        Number of people eating:
-        <input type="number" bind:value={familySize} min="1" required>
+        <Slider/>
       </label>
       <button type="button" onclick={nextStep}>Next</button>
-    {:else if currentStep == 1}
+
+    {:else if currentStep == 2}
       <h2>Step 2: Product Selection</h2>
       <p>Select products for {familySize} {familySize === 1 ? 'person' : 'people'}:</p>
       {#each products as product}
@@ -65,7 +65,14 @@
         </label>
       {/each}
       <dvi>
-        <button type="button" onclick={prevStep}>Previous</button>
+        <button type="button" onclick={prevStep}>PREV</button>
+        <button type="button" onclick={nextStep}>Next</button>
+      </dvi>
+
+      {:else if currentStep == 3} 
+      <h2> Step 3: Pick a Date on My Calendar</h2>
+      <dvi>
+        <button type="button" onclick={prevStep}>PREV</button>
         <button type="submit">SUBMIT</button>
       </dvi>
     {/if}
