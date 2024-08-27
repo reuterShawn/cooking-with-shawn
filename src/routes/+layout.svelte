@@ -1,6 +1,7 @@
 <script>
 	import Header from './Header.svelte';
 	import '../app.css';
+	import Footer from './Footer.svelte';
 </script>
 
 <div class="app">
@@ -10,12 +11,7 @@
 		<slot />
 	</main>
 
-	<footer class="footer-background">
-		<div class="footer-background">
-
-		</div>
-
-	</footer>
+	<Footer/>
 </div>
 
 <style>
