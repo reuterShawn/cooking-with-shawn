@@ -1,21 +1,47 @@
-<script>
-    let name = '';
-    let email = '';
-    let message = '';
-  
-    function handleSubmit() {
-      // Here you would typically send the form data to a server
-      console.log('Form submitted:', { name, email, message });
-      // Reset form fields after submission
+ <script>
+  let name = '';
+  let email = '';
+  let message = '';
+  let status = '';
+
+  async function handleSubmit() {
+    status = 'Sending...';
+    
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        to: 'your@email.com',
+        subject: `New contact from ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      }),
+    });
+
+    const result = await response.json();
+    
+    if (result.success) {
+      status = 'Message sent successfully!';
       name = '';
       email = '';
       message = '';
+    } else {
+      status = 'Failed to send message. Please try again.';
     }
-  </script>
+  }
+</script>
+
   
-  <container class="header-text">
+  <div class="grid">
+
+  <section class="header-text">
     <h2>Contact Me</h2>
-  </container>
+    <p>
+      Hello and Welcome to Fulimillment fill out this contact form to get in contact with me.
+    </p>
+  </section>
+
 <div class="background">
 
   <form on:submit|preventDefault={handleSubmit} class="form-right">
@@ -28,21 +54,40 @@
     </div>
   
     <div>
-      <label for="message">Message:</label>
       <textarea id="message" bind:value={message} required></textarea>
     </div>
   
     <button type="submit">Send</button>
   </form>
+      
+
+  <form on:submit|preventDefault={handleSubmit}>
+    <input bind:value={name} placeholder="Your Name" required>
+    <input bind:value={email} type="email" placeholder="Your Email" required>
+    <textarea bind:value={message} placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
   
+  {#if status}
+    <p>{status}</p>
+  {/if}
 </div>
 
-  <style>
+</div>
 
-    .form-right {
-        padding-left: 20em;
+
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: 300px 400px;
+      flex-wrap: wrap;
+      gap: 2em;
     }
 
+    .header-text {
+      padding-top: 25%;
+      width: fit-content;
+    }
     form {
       max-width: 400px;
       margin: 0 auto;
@@ -54,10 +99,10 @@
       margin-top: 1rem;
     }
   
-    label {
+    /* label {
       display: block;
       margin-bottom: 0.5rem;
-    }
+    } */
   
     input, textarea {
       width: 50%;
@@ -75,6 +120,7 @@
       padding: 0.5rem 1rem;
       border: none;
       cursor: pointer;
+      border-radius: 1em;
     }
   
     button:hover {
