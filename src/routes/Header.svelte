@@ -1,5 +1,4 @@
 <script>
-	import { page } from '$app/stores';
 	let siteName = "Fulfillment Cooking"
 </script>
 

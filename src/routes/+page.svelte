@@ -22,7 +22,7 @@
 
 	<section>
 		<h2>Different Cuisine Meals To Choose From</h2>
-		<div class="background-one">
+		<div>
 			<Card/>
 		</div>
 	</section>
@@ -30,6 +30,7 @@
 <section>
 	<Step/>
 </section>
+
 
 <style>
 	section {
