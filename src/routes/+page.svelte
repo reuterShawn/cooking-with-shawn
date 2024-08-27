@@ -1,5 +1,6 @@
 <script>
 	import Counter from './Counter.svelte';
+	import Step from '$lib/components/Step.svelte';
 </script>
 
 <svelte:head>
@@ -8,14 +9,8 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<!-- <span class="welcome">
-			<picture>
-			</picture>
-		</span> -->
 
-	</h1>
-
+	<Step/>
 	<h2>
 	Number of People Assited in Creating Great Food Experiences
 	</h2>
@@ -36,11 +31,4 @@
 		width: 100%;
 	}
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
 </style>

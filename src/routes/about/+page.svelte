@@ -5,6 +5,8 @@
 
 <script>
 	import Card from "$lib/components/Card.svelte";
+
+	import Step from "$lib/components/Step.svelte"
 </script>
 
 <div class="text-column">
@@ -15,4 +17,7 @@
 	</p>
 
 	<Card/>
+
+	<hr>
+
 </div>
