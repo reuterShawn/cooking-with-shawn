@@ -18,19 +18,23 @@
 <style>
 	header {
 		display: flex;
-    background-color: orange;
+    background-color: var(--darkMain);
 		justify-content: space-between;
+    width: 100%;
+    padding: 2em;
 	}
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2em;
   }
 
   h1 {
     margin: 0;
     font-size: 1.5rem;
+    color: #ffd0f1;
   }
 
   ul {
@@ -47,7 +51,7 @@
 
   a {
     text-decoration: none;
-    color: #333;
+    color: white;
   }
 
   a:hover {
