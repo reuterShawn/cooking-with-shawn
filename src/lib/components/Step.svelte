@@ -40,7 +40,7 @@
       // Here you would typically send the data to a server
     }
   </script>
-<container>
+<container class="background">
 
 
 <form onsubmit={submitForm}>
@@ -71,9 +71,45 @@
     {/if}
 </form>
 
+<!-- <p>
+    <input type="checkbox" bind:value={currentStep}>
+    <input type="checkbox" >
+    <input type="checkbox" >
+
+</p> -->
+
+<p>
+    {#each [1, 2, 3] as step}
+      {#if currentStep >= step}
+        <input 
+          type="checkbox" 
+          checked={currentStep === step}
+          onchange={() => currentStep +=(step)}
+        >
+      {:else}
+        <span class="placeholder">□</span>
+      {/if}
+    {/each}
+  </p>
 </container>
 
   <style>
+
+    p {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+    container {
+        width: 75%;
+        height: 25em;
+        color: white;
+        background-color: var(--darkMain);
+        padding: 1em;
+        border-radius: 1em;
+    }
+
     form {
       display: flex;
       flex-direction: column;
@@ -91,9 +127,9 @@
       display: flex;
       flex-direction: row;;
       justify-content: center;
-      background-color: orangered;
+      background-color: #3f8efc;
+      
       border-radius: 1em;
-      color: white;
       padding: .5em;
       box-shadow: inset;
       width: 25%;
